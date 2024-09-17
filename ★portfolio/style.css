@@ -1,0 +1,606 @@
+/*================
+PC、スマホ共通スタイル
+=================*/
+* 
+{
+  box-sizing: border-box;
+  
+}
+
+body 
+{
+  max-width: 1080px;
+  margin: 0 auto 0 auto;
+  font-family: 'Kaisei+Decol', serif !important;
+  font-size: 15px;
+  background-color: #FFFCF9;
+}
+
+/* ヘッダー */
+header 
+{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+#logo img
+{
+  width: 100%;
+  height: 100px;
+  margin-left: 10px;
+}
+
+/* ナビゲーションのレイアウト */
+#nav-pc 
+{
+  text-align: right;
+  font-size: 14px;
+  padding-top: 15px;
+}
+
+/* ナビゲーションのリンクの装飾設定 */
+#nav-pc ul 
+{
+  display: flex;
+  padding-left: 0;
+  font-size: 18px;
+}
+
+#nav-pc li 
+{
+  margin-left: 20px;
+  list-style: none;
+}
+
+#nav-pc a 
+{
+  text-decoration: none;
+  font-weight: bold;
+  color: #482019;
+}
+
+#nav-pc a:hover 
+{
+  text-decoration: underline;
+}
+
+/* メインビジュアル*/
+#main-visual 
+{
+  position: relative;
+  height: 400px; /* セクションの高さ */
+  display: flex; /* Flexboxを使って要素を配置 */
+  align-items: center; /* 縦方向に中央揃え */
+}
+
+#main-message 
+{
+  background-color: #D04337;
+  color: #FFFCF9;
+  border-radius: 0 0 150px 0;
+  width: calc(100% - 360px); /* 画像の幅を引いた残りの幅 */
+  min-height: 400px; /* 最低の高さを設定 */
+  padding: 20px; /* パディングはそのまま */
+  z-index: 11;
+  position: relative; /* Flexboxで配置するために位置指定を相対に設定 */
+}
+
+#main-message > h1 
+{
+  font-size: 60px;
+  font-weight: bold;
+  margin: 100px 0 0 0; /* 左のマージンをリセット */
+}
+
+#main-message > p 
+{
+  font-size: 30px;
+  margin: 0; /* マージンをリセット */
+}
+
+.special-text
+{
+  font-size: 20px !important;
+}
+
+#main-visual > img
+{
+  width: 700px; /* 画像の幅 */
+  height: 400px; /* 画像の高さ */
+  position: absolute;
+  top: 0;
+  right: 0;
+  object-fit: cover; /* 画像のアスペクト比を保持しつつ、領域に合わせる */
+  z-index: 10;
+}
+
+/* 見出し */
+h2 
+{
+  margin: 40px 0 0 0;
+  color: #D04337;
+}
+
+h2::after 
+{
+  content: url("images/line.png");
+  margin-left: 10px;
+}
+
+h3 
+{
+  font-size: 27px;
+  color: #482019;
+}
+
+/* コンセプト */
+#concept 
+{
+  margin: 80px auto 0 auto;
+  padding: 10px 40px 0px 40px;
+}
+
+#concept-flex 
+{
+  display: flex;
+  text-align: center;
+  color: #96705C;
+}
+
+#concept-flex > div 
+{
+  width: 50%;
+  margin: 20px;
+}
+
+.concept-photo 
+{
+  width: 300px;
+  height: 200px;
+
+}
+
+/* プロダクト */
+#product 
+{
+  margin: 20px 0 80px 0;
+  padding: 10px 40px 0px 40px;
+}
+
+/* 外枠 */
+#product > div 
+{
+  margin-top: 40px;
+  display: flex;
+}
+
+/* 左のカラム */
+#product-left 
+{
+  width: 50%;
+  margin-right: 20px;
+}
+
+/* 右のカラム */
+#product-right
+{
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 80px;
+  display: flex; /* flexboxを使う */
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* 中央に配置する */
+  position: relative;
+}
+
+/* 画像＋説明の枠 */
+#product-left > div 
+{
+  color: #482019;
+  position: relative;
+  height: 480px;
+  margin-right: 20px;
+}
+
+#product-right > div 
+{
+  color: #482019;
+  position: relative;
+  height: 480px;
+  margin-left: 20px;
+}
+
+/* 画像 */
+.product-photo 
+{
+  width: 100%; /* 幅を親要素に合わせる */
+  height: 80%; /* 高さも親要素に合わせる */
+  object-fit: cover; /* アスペクト比を維持しながら、画像を枠にフィットさせる */
+  border-radius: 0 0 40px 40px;
+}
+
+/* 説明文の枠 */
+.product-explain 
+{
+  color: #96705C;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%; /* 左から50%の位置に配置 */
+  transform: translateX(-50%); /* 左から50%の位置で中央に配置 */
+  bottom: 50px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px #96705C;
+  width: 80%; /* 必要に応じて調整 */
+  text-align: center; /* テキストを中央に配置 */
+}
+
+/* 説明文の英語 */
+.product-explain > span 
+{
+  color: #D04337;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* 説明文の見出し */
+.product-explain > h3 
+{
+  margin: 5px 0 5px 0;
+}
+
+/* 説明文 */
+.product-explain > p 
+{
+  margin: 0;
+}
+
+/* 会社概要 */
+#company 
+{
+  margin: 80px auto 80px auto;
+  padding: 10px 40px 0px 40px;
+}
+
+#company-table 
+{
+  width: 100%;
+}
+
+.tableheader 
+{
+  color: #482019;
+  text-align: left;
+  padding: 20px;
+  border-bottom-color: #482019;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 100px;
+}
+
+.tableheader-first 
+{
+  border-top-color: #482019;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.cell 
+{
+  color: #482019;
+  padding: 30px;
+  border-bottom-color: #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.cell-first 
+{
+  border-top-color: #ececec;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+/* フッター */
+footer 
+{
+  background-color: #D04337;
+  text-align: center;
+  padding: 80px 80px 30px 80px;
+}
+
+#footer-logo 
+{
+  margin-bottom: 30px;
+}
+
+.logo-bottom
+{
+  width: 135px;
+  height: 100%;
+  margin: 30px;
+}
+
+#footer-link 
+{
+margin-bottom: 50px;
+}
+
+#footer-link > a 
+{
+  text-decoration: none;
+  margin: 10px;
+  color: #ffffff;
+}
+
+#footer-link > a:hover 
+{
+  text-decoration: underline;
+}
+
+#sns-footer 
+{
+  text-align: left;
+  width: 100%;
+}
+
+/* ソーシャルメディアアイコンの下線を消す */
+#sns-footer a
+{
+  text-decoration: none; /* 下線を消す */
+}
+
+#sns-footer > a 
+{
+  margin-right: 30px;
+}
+
+#copyright 
+{
+  color: #FFFCF9;
+  float: right;
+}
+
+/*================
+スマートフォン用のスタイル
+=================*/
+@media screen and (max-width: 767px)
+{
+  header 
+  {
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    align-items: center; /* 縦方向の中央揃え */
+  }
+
+  #logo img
+  {
+    margin-left: 20px;
+    margin-top: 8px;
+    width: 50px;
+    height: 50px;
+    
+  }
+
+  /* ナビゲーション */
+  #nav-pc 
+  {
+    text-align: center;
+    font-size: 10px; /* フォントサイズを小さく設定 */
+    padding: 10px 0; /* 上下のパディングを調整 */
+    width: 100%; /* ナビゲーションの幅を100%に設定 */
+    max-width: 360px; /* 必要に応じて幅を設定 */
+  }
+
+  #nav-pc ul 
+  {
+    font-size: 10px;
+    display: flex; /* 横並びにする */
+    padding-left: 0;
+    margin: 0 auto; /* 横方向の中央揃え */
+    list-style: none; /* デフォルトのリストスタイルを削除 */
+    justify-content: flex-end;/* displayflexを使用して右寄せ */
+    
+  }
+
+  #nav-pc li
+  {
+    margin: 0 1px; /* アイテム間のスペースを狭くする（左右のマージンを調整） */
+    display: inline-block; /* リストアイテムを横並びにする */
+    
+  }
+
+  #nav-pc a 
+  {
+    padding: 5px 10px; /* リンクのパディングを調整 */
+    display: inline-block; /* リンクをインラインブロックにしてサイズを調整 */
+  }
+  
+  /* メインビジュアル */
+  #main-visual 
+  {
+    flex-direction: column; /* 縦に配置 */
+    height: auto; /* 自動調整 */
+  }
+
+  #main-message 
+  {
+    width: 100%;
+    min-height: auto;
+    padding: 30px;
+    text-align: left; /* テキストを左揃え */
+    border-radius: 0; /* 角丸をリセット */
+  }
+
+  #main-message > h1
+  {
+    font-size: 35px; /* フォントサイズを調整 */
+    margin: 20px 0 10px 0; /* 上下のマージンを調整 */
+  }
+
+  #main-message > p 
+  {
+    font-size: 20px; /* フォントサイズを調整 */
+    margin-bottom: 15px;
+  }
+
+  .special-text 
+  {
+    font-size: 15px !important;/* 特別テキストのフォントサイズ */
+  }
+
+  #main-visual > img 
+  {
+    width: 100%; /* 画像の幅を100%に調整 */
+    height: auto; /* 高さを自動調整 */
+    position: static; /* 画像の位置をリセット */
+    object-fit: contain; /* 画像のサイズを調整 */
+  }
+
+  /* 見出しのスタイル調整 */
+  h2::after 
+  {
+    margin-left: 5px; /* 余白を調整 */
+  }
+
+  h3 
+  {
+    font-size: 20px; /* 見出しのフォントサイズを調整 */
+  }
+
+  /* コンセプト */
+  #concept 
+  {
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
+  }
+
+  #concept-flex 
+  {
+    flex-direction: column;
+  }
+
+  #concept-flex > div 
+  {
+    width: 100%;
+    margin: 0;
+  }
+
+  .concept-photo 
+  {
+    width: 100%;
+  }
+
+  #concept h3 
+  {
+    padding: 0 20px 0 20px;
+  }
+
+  /* プロダクト */
+  #products
+  {
+    margin: 0;
+    padding: 10px 0 0;
+  }
+
+  #product
+  {
+    text-align: left;
+  }
+
+  #index-h2 
+  {
+    text-align: left !important; /* テキストを左揃えにする */
+    margin-left: 0 !important; /* 左の余白をなくす（必要に応じて） */
+  }
+
+  #product > div 
+  {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  #product h2 
+  {
+    text-align: left;
+  }
+
+  /* 外枠 */
+  /* 左右のカラム　スマホでは縦並び */
+  #product-left,
+  #product-right 
+  {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px 0 20px;
+  }
+
+  /* 写真＋説明の枠 */
+  #product-left > div,
+  #product-right > div 
+  {
+    height: auto;
+    margin: 0;
+  }
+
+  /* 説明文の枠 */
+  .product-explain 
+  {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    bottom: 70px;
+  }
+
+  .product-explain > h3 
+  {
+    margin: 10px 0 10px 0;
+  }
+
+  /*会社概要*/
+  #company 
+  {
+    padding: 0 20px 0 20px;
+  }
+  #company h2 
+  {
+    margin: 20px 0 20px 0;
+  }
+
+  .tableheader 
+  {
+    width: 50px;
+  }
+
+  .cell 
+  {
+    padding: 20px;
+  }
+
+  /* フッター */
+  footer 
+  {
+    padding: 30px 20px 50px 20px;
+  }
+
+  .logo-bottom
+  {
+    width: 100px;
+    align-items: center;
+    margin-left: 3px; /* ロゴを左に0pxずらす */
+  }
+  
+  #footer-link > a 
+  {
+    display: block;
+    margin: 0 20px 30px 0;
+  }
+
+  #copyright
+  {
+    font-size: 12px;
+    margin-top: 30px;
+  }
+
+}

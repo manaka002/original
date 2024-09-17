@@ -1,0 +1,141 @@
+/* タイピングゲーム全体 */
+body 
+{
+  font-size: 6em;        /*フォントサイズ：デフォルトの6倍の大きさ*/
+  text-align: center;    /* 文字の位置：中央揃え */
+}
+
+/* ゲームの残り秒数が表示されるタイマーの領域 */
+.count 
+{
+  margin: 0;            /*余白：なし*/
+  font-weight: bold;    /* 字の太さ：太字 */
+  color: #4D4535;     /* 文字色 */
+}
+
+/* poyopoyoアニメーション */
+@keyframes poyopoyo 
+{
+  0%, 40%, 60%, 80% 
+  {
+    transform: scale(1.0);
+  }
+  50%, 70% 
+  {
+    transform: scale(0.95);
+  }
+}
+ 
+/* テキストが表示される領域 */
+.wrap 
+{
+  margin: 180px 0 0 0;                    /* 余白：上に180px*/
+  padding: 80px 40px;                     /* 余白：上下に80px*/
+  background-color: #E97F12;            /* 背景色 */
+  font-weight: bold;                      /* 文字の太さ：太さ */
+  color: #FBFCFD;                       /* 文字色*/
+  overflow: hidden;                       /* これでマージン相殺を防ぐ */
+  animation: poyopoyo 1s ease-out;        /* poyopoyoアニメーション */
+  animation-duration: 4s;                 /* アニメーションの1サイクルの時間（4秒） */
+  animation-timing-function: ease-in-out; /* アニメーションの速度変化のパターン */
+  animation-iteration-count: infinite;    /* アニメーションを無限に繰り返す */
+}
+
+/* 正しくタイプされた場合のテキスト */
+.typed 
+{
+  color: lightgreen;
+}
+
+/* ミスタイプの場合の背景 */
+.mistyped 
+{
+  background-color: #CF2B0E;
+}
+ 
+/* typed と untyped の間に余計なスペースが入らないようにする */
+.typed, .untyped 
+{
+  white-space: pre;  /* スペースや改行をそのまま適用 */
+}
+
+/* タイプ数を表示する領域 */
+.score 
+{
+  display: none;          /* 初めは非表示 */
+  font-size: 50px;        /* フォントサイズ */
+  font-weight: bold;      /* 字の太さ：太字 */
+  color: #4D4535;       /* 文字色 */
+  margin-top: 60px;       /* 上の余白: 60px */
+}
+
+/* ズームインアニメーション */
+@keyframes zoomIn 
+{
+  0% 
+  {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% 
+  {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+}
+
+/* タイムアップのメッセージのスタイリング */
+#message 
+{
+  font-size: 100px;                 /* フォントサイズ */
+  color: #CF2B0E;                 /* 文字色 */
+  text-align: center;               /* 文字の位置：中央揃え */
+  margin-top: 20px;                 /* 上の余白: 20px */
+  font-weight: bold;                /* 字の太さ：太字 */
+  display: none;                    /* 初めは非表示 */
+  text-align: center;               /* テキストを中央揃え */
+  animation: zoomIn  1s ease-out;   /* ズームインアニメーション */
+}
+
+/* スタートボタンの基本スタイル */
+#start 
+{
+  font-size: 45px;                                   /* フォントサイズを大きく */
+  font-weight: bold;                                 /* 字の太さ：太字 */
+  background-color: #4D4535;                       /* 背景色 */
+  color: #FBFCFD;                                  /* 文字色 */
+  border: none;                                      /* ボーダーを削除 */
+  padding: 15px 32px;                                /* 内部余白を設定 */
+  text-align: center;                                /* テキストを中央揃え */
+  text-decoration: none;                             /* テキストの下線を削除 */
+  display: inline-block;                             /* インラインブロック要素に設定 */
+  margin: 60px;                                      /* 外部余白を設定 */
+  cursor: pointer;                                   /* カーソルをポインターに */
+  border-radius: 5px;                                /* 角を丸く */
+  transition: background-color 0.3s, transform 0.3s; /* 背景色とトランスフォームのアニメーション */
+}
+
+/* スタートボタンのホバー効果 */
+#start:hover 
+{
+  background-color: #888;     /* ホバー時の背景色を少し暗く */
+  transform: scale(1.05);       /* ホバー時に少し大きく */
+}
+
+/* スタートボタンのアクティブ効果 */
+#start:active 
+{
+  background-color: #888;     /* クリック時の背景色をさらに暗く */
+  transform: scale(0.98);       /* クリック時に少し縮む */
+}
+
+/* タイマーを初期状態で非表示にする */
+#count
+{
+  display: none;                 /* 初めは非表示 */
+  margin-top: 0;                 /* 余白をリセット */
+  position: absolute;            /* 絶対位置 */
+  top: 20px;                     /* 上から20pxの位置に配置 */
+  left: 50%;                     /* 左右の中央に配置 */
+  transform: translateX(-50%);   /* 水平方向に中央寄せ */
+}
