@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>タイピングゲーム</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="カラータイピングゲームです。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- カウントダウン表示 -->
+    <p id="count" class="count">60</p>
+    
+    <!-- タイプ済みと未タイプのテキスト表示 -->
+    <div id="wrap" class="wrap">
+      <span id="typed" class="typed"></span><span id="untyped"></span>
+    </div>
+
+    <!-- タイプ済みの文字数を表示する領域 -->
+    <p id="score" class="score">タイプ数</p>
+
+    <!-- タイムアップのメッセージを表示するための要素 -->
+    <p id="message"></p> 
+
+    <!-- スタートボタン -->
+    <button id="start">スタート</button>
+    
+    <!-- JavaScriptファイルの読み込み -->
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
